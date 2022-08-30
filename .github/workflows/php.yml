@@ -1,0 +1,24 @@
+name: PHP Composer
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Upload GitHub Pages artifact
+      uses: actions/upload-pages-artifact@v1.0.3
+      with:
+        # Path of the directory containing the static assets.
+        path: # default is _site/
+        # Duration after which artifact will expire in days.
+        retention-days: # optional, default is 1
